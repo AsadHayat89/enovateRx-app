@@ -8,6 +8,7 @@ import '../../Controller/Coupons_controller.dart';
 import '../../Controller/Coupons_details_controller.dart';
 import '../../widgets/Coupons_detail_widget.dart';
 import '../../widgets/disscount_coupons.dart';
+import 'Coupons_detail.dart';
 
 class Avaiable_Coupons extends StatelessWidget {
   const Avaiable_Coupons({Key? key}) : super(key: key);
@@ -103,7 +104,13 @@ class Avaiable_Coupons extends StatelessWidget {
                                             scrollDirection: Axis.vertical,
                                             itemCount: CouController.ConponsList.length,
                                             itemBuilder: (BuildContext context, int index) {
-                                              return Coupons_detail_widget(index:index,Limit:CouController.ConponsList[index].Limit,image:CouController.ConponsList[index].image,time:CouController.ConponsList[index].Expire,Exlusive: CouController.ConponsList[index].Exclusive,title: CouController.ConponsList[index].title,save: CouController.ConponsList[index].save,savePrice: CouController.ConponsList[index].savePrice,);
+                                              return GestureDetector(
+                                                onTap: (){
+
+                                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => CouponsDetails()));
+
+                                                },
+                                                  child: Coupons_detail_widget(index:index,Limit:CouController.ConponsList[index].Limit,image:CouController.ConponsList[index].image,time:CouController.ConponsList[index].Expire,Exlusive: CouController.ConponsList[index].Exclusive,title: CouController.ConponsList[index].title,save: CouController.ConponsList[index].save,savePrice: CouController.ConponsList[index].savePrice,));
                                             }),
                                       ),
                                     ),

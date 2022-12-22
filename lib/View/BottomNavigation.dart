@@ -7,6 +7,9 @@ import '../Controller/bottom_Navigation_Controller.dart';
 import 'Available_Coupons/available_Coupons.dart';
 import 'DashBoard/dashBoard.dart';
 import 'InProgress/Progress.dart';
+import 'Pharmatics_list/Pharmatics_list.dart';
+import 'Pharmatics_list/pharmacy_detail.dart';
+import 'Profile/profile_page.dart';
 import 'Saved_coupons/Saved_coupons.dart';
 class MyNavigationBar extends StatelessWidget {
   int _selectedIndex = 1;
@@ -15,9 +18,9 @@ class MyNavigationBar extends StatelessWidget {
   static List<Widget> _widgetOptions = <Widget>[
     DashBoard(),
     Avaiable_Coupons(),
-    ProgressPage(),
+    Pharmatices(),
     Saved_Coupons(),
-    ProgressPage(),
+    Profile(),
   ];
 
   void _onItemTapped(int index) {

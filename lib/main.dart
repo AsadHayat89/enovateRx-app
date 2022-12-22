@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'View/Auth/SignUp.dart';
+import 'View/Auth/login.dart';
 import 'View/BottomNavigation.dart';
 import 'View/DashBoard/dashBoard.dart';
 
