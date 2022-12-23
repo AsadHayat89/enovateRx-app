@@ -13,6 +13,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
+  TextEditingController mycontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
