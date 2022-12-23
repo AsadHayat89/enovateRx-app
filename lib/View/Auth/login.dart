@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:untitled2/App_config/Colors.dart';
 
 import 'SignUp.dart';
 
@@ -32,7 +33,7 @@ class _LoginState extends State<Login> {
                     child: Text(
                       "enovateRx",
                       style: GoogleFonts.notoSansMongolian(
-                          color: Colors.blue,
+                          color: AppColors.appbackgrapund,
                           fontSize: 30.sp,
                           fontWeight: FontWeight.bold),
                     ),
@@ -41,7 +42,7 @@ class _LoginState extends State<Login> {
                 Container(
                   height: Get.height - 50,
                   width: Get.width,
-                  color: Colors.blue.shade100,
+                  color: AppColors.white,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,10 +81,17 @@ class _LoginState extends State<Login> {
                               padding: EdgeInsets.only(top: 10.h),
                               child: Container(
                                 child: TextField(
-                                  obscureText: true,
+                                  // obscureText: true,
+
+                                  cursorColor: AppColors.appbackgrapund,
                                   decoration: InputDecoration(
                                     filled: true,
                                     //<-- SEE HERE
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: const BorderSide(
+                                          color: AppColors.appbackgrapund,
+                                          width: 2.0),
+                                    ),
                                     fillColor: Colors.white,
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
@@ -92,7 +100,9 @@ class _LoginState extends State<Login> {
                                     ),
                                     border: OutlineInputBorder(),
                                     labelText: 'YourEmail@gmail.com',
-                                    hintText: 'Enter Password',
+                                    labelStyle: TextStyle(
+                                        color: AppColors.appbackgrapund),
+                                    hintText: 'Enter Email',
                                   ),
                                 ),
                               ),
@@ -115,6 +125,7 @@ class _LoginState extends State<Login> {
                               padding: EdgeInsets.only(top: 10.h),
                               child: Container(
                                 child: TextField(
+                                  cursorColor: AppColors.appbackgrapund,
                                   obscureText: true,
                                   decoration: InputDecoration(
                                     filled: true,
@@ -122,11 +133,22 @@ class _LoginState extends State<Login> {
                                     fillColor: Colors.white,
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
-                                          width: 2,
-                                          color: Colors.black54), //<-- SEE HERE
+                                        width: 2,
+                                        color: Colors.black54,
+                                      ),
+                                      //<-- SEE HERE
                                     ),
+                                    // cursorColor: AppColors.appbackgrapund,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: const BorderSide(
+                                          color: AppColors.appbackgrapund,
+                                          width: 2.0),
+                                    ),
+                                    labelStyle: TextStyle(
+                                        color: AppColors.appbackgrapund),
                                     border: OutlineInputBorder(),
                                     labelText: 'Enter Password',
+
                                     hintText: 'Enter Password',
                                   ),
                                 ),
@@ -139,13 +161,14 @@ class _LoginState extends State<Login> {
                                 width: Get.width,
                                 height: 50,
                                 decoration: BoxDecoration(
-                                    borderRadius: new BorderRadius.only(
-                                      topLeft: const Radius.circular(25.0),
-                                      topRight: const Radius.circular(25.0),
-                                      bottomLeft: const Radius.circular(25.0),
-                                      bottomRight: const Radius.circular(25.0),
-                                    ),
-                                    color: Colors.red.shade400),
+                                  borderRadius: new BorderRadius.only(
+                                    topLeft: const Radius.circular(25.0),
+                                    topRight: const Radius.circular(25.0),
+                                    bottomLeft: const Radius.circular(25.0),
+                                    bottomRight: const Radius.circular(25.0),
+                                  ),
+                                  color: AppColors.appbackgrapund,
+                                ),
                                 child: Center(
                                   child: Text(
                                     "Sign In",
@@ -164,13 +187,14 @@ class _LoginState extends State<Login> {
                                 width: Get.width,
                                 height: 50,
                                 decoration: BoxDecoration(
-                                    borderRadius: new BorderRadius.only(
-                                      topLeft: const Radius.circular(25.0),
-                                      topRight: const Radius.circular(25.0),
-                                      bottomLeft: const Radius.circular(25.0),
-                                      bottomRight: const Radius.circular(25.0),
-                                    ),
-                                    color: Colors.blue.shade400),
+                                  borderRadius: new BorderRadius.only(
+                                    topLeft: const Radius.circular(25.0),
+                                    topRight: const Radius.circular(25.0),
+                                    bottomLeft: const Radius.circular(25.0),
+                                    bottomRight: const Radius.circular(25.0),
+                                  ),
+                                  color: AppColors.appbackgrapund,
+                                ),
                                 child: Center(
                                   child: Text(
                                     "Login with facebook",
@@ -185,15 +209,14 @@ class _LoginState extends State<Login> {
                             Padding(
                               padding: EdgeInsets.only(top: 10.h),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: [
                                       Checkbox(
                                         value: true,
-                                        onChanged: (value){
-
-                                        },
+                                        onChanged: (value) {},
                                       ),
                                       Text("Remember me")
                                     ],
@@ -201,14 +224,25 @@ class _LoginState extends State<Login> {
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
-                                      Text("Do you have any account",style: TextStyle(fontSize: 12),),
+                                      Text(
+                                        "Do you have any account",
+                                        style: TextStyle(fontSize: 12),
+                                      ),
                                       GestureDetector(
-                                        onTap: (){
-                                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp()));
-                                          // Get.to(SignUp());
-                                        },
-                                          child: Text("Register?",style: TextStyle(fontSize: 12,color: Colors.red.shade500),)),
-
+                                          onTap: () {
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        SignUp()));
+                                            // Get.to(SignUp());
+                                          },
+                                          child: Text(
+                                            "Register?",
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              color: AppColors.appbackgrapund,
+                                            ),
+                                          )),
                                     ],
                                   )
                                 ],
