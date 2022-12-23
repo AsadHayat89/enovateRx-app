@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../App_config/Colors.dart';
 import '../BottomNavigation.dart';
 
 class Profile extends StatefulWidget {
@@ -16,6 +17,7 @@ class _LoginState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(top: 30.h),
@@ -64,7 +66,7 @@ class _LoginState extends State<Profile> {
                 ),
                 Container(
                   width: Get.width,
-                  color: Colors.blue.shade100,
+                  color:    AppColors.white,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -305,7 +307,7 @@ class _LoginState extends State<Profile> {
                                   bottomLeft: const Radius.circular(25.0),
                                   bottomRight: const Radius.circular(25.0),
                                 ),
-                                color: Colors.red.shade400),
+                                color: AppColors.appbackgrapund),
                             child: Center(
                               child: Text(
                                 "Save",

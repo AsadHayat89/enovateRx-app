@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'View/Auth/SignUp.dart';
+
 import 'View/Auth/login.dart';
 import 'View/BottomNavigation.dart';
 import 'View/DashBoard/dashBoard.dart';
@@ -28,7 +28,8 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: child,
+          home: Login(),
+          // home: child,
         );
       },
       child: MyNavigationBar(),

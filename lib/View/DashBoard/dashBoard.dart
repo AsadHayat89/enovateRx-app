@@ -204,6 +204,8 @@ class DashBoard extends StatelessWidget {
                                                     (BuildContext context,
                                                         int index) {
                                                   return Padding(
+
+                                                    //
                                                     padding:
                                                         const EdgeInsets.only(
                                                             right: 8.0),
